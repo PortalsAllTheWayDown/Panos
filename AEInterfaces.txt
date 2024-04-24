@@ -1,0 +1,8 @@
+To increase available bandwidth above the physical limitation of the interfaces, interfaces can be bundled into an AE group using the 802.1AX protocol. Up to eight interfaces can be combined into a logical bundle.
+A new group can be created by clicking on Add Aggregate Group under Network | Interfaces | Ethernet.
+
+Additionally you can configure the Link Aggregation Control Protocol (LACP) to improve interface failure detection. LACP enables link failure detection on the physical and data link layer, while the default protocol only detects physical link failure.
+
+You can set whether the firewall is in active or passive mode. LACP will not work if both are set to passive.
+
+In some cases you need to be able to connect to a port mirror on a switch and just listen without participating. For such instances you can configure a tap interface.

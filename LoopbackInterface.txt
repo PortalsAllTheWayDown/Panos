@@ -1,0 +1,4 @@
+A loopback interface is a logical layer 3 interface that can servce many purposes. One common use case includes adding an additinoal Public IP to its own interface so VPN configuration can be added to it.
+Another use case is to add a management profile to a loopback, and then leverage security rules to allow administrators to manage the firewall form exotic networks.
+It needs to be configured with an IP address and a security zone and it needs to be associated with a VR.
+

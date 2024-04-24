@@ -1,0 +1,8 @@
+The antivirus profile has three sections that depend on different licenses and dynamic update settings.
+The actions under ACTION rely on threat prevention license and antivirus updates, WILDFIRE ACTION relies on the wildfire license and the wildfire updates that sre set to periodical updates, and wildfire inline ML action relies on wildfire set to real time.
+If any of these lencenses are missing from your system, the actions listed in their columns will not be applied. Application Exception allows you to change the action associated with a decorder for individual applications as needed.
+The actinos that can be set for both threat prevention and wildfire antivirus actions are as follows:
+-allow-decryption-alert
+-reset-client
+-reset-server
+-reset-both

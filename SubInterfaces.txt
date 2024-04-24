@@ -1,0 +1,5 @@
+All physical(that is layer 2, layer3, VWire, and Aggregate) interfaces can have subinterfaces. You can create these by selecting the desired physical interface and clicking on add subinterface at the bottom left of network | Interfaces.
+A subinterface is used when the physical interface is connected to a trunked link containing VLAN tagged packets. The physical interface is not able to interpret the tags but subinterfaces are.
+For each VLAN carried by the trunk you can create a subinterface to represent the virtual network coming from the switch. The advantage of using subinterfaces is that each VLAN can be associated with its own security zone.
+
+The subinterface will mimic all the configuration specifics of its parent physical interface, but interface types cannot be different from the physical interface type.

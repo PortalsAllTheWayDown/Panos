@@ -1,0 +1,4 @@
+Tap interfaces can be used as a passive sniffing port. If a different netowrk device is set up with port mirroring, its egress port can be connected to the tap interface to intercept all packets and apply the app ID and content ID. As long as the tap interface is sent all packets of a session it will be able to inspect the traffic as if it is floring through the firewall.
+limitations - As the firewall is not actively participating in the processing of packets, it cannot take action if it detects a threat, it can only report it.
+            - SSL decryption can only be applied to inbound connections if the server certificate can be loaded onto the firewall with its private key.
+

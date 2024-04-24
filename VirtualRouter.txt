@@ -1,0 +1,14 @@
+A VR is the routing element of the firewall. Each layer 3, loopback, and VLAN interface needs to be associated with a VR, but multiple VRs can be used on a system. Not all interfaces need to be associated with the same VR.
+The virtual routers are found in the network tab under virtual routers.
+By default static routes have a higher priority than OSPF(Open Shortest Path First), but you can change this priority if you want OSPF routes to have priority and only use static routes if OSPF becomes unavailable.
+You can also adjust the priority of a route if it has the same routing protocol.
+
+You may need to setup a default route to the internet which the destination of this route would be 0.0.0.0/0
+
+Next hop has serveral options:
+    -IP Address: The IP of the upstream router to forward packets to.
+    -Next VR: Whether the packet needs to handed over to a different VR on the same device.
+    -FQDN: If the upstream router has a dynamic IP, it could be useful to use an FQDN that is dynamically updated by a DNS record.
+    -Discard: Routes can be set to "black hole" certain subnets. This can be used to prevent any packets from reaching a connected out of band network, even if a security policy were to allow this.
+    -None: Routes may not have a next hop, such as packets routed into a VPN tunnel.
+

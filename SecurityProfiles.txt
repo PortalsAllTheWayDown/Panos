@@ -1,0 +1,7 @@
+There are several types of security profiles like antivirus, vulnerability protection, url filtering, and anti-spyware.
+Before you can start building a solid security rule base you need to create at least one custom security profile of each type to use in all of your security rules.
+The default profiesl are read-only so its better to create your own as you cant change these at all.
+
+security profiles are evaluated by the first security rule that a session is matched against.
+If a six-tuple is matched against a security rule with no or limited security profiles, no scanning can take place until there is an application shift and the security policy is re-evaluated. All security rules need to ahve security profiles.
+

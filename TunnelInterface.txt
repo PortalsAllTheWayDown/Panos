@@ -1,0 +1,2 @@
+Logical interfaces that serve as the ingress and egress point of tunneled traffic, both site to site VPN and Globalprotect SSL and IPSec.
+The physical tunnel is terminated on a Layer 3 or loopback interface, but the packets that need to be encrypted should be routed to the tunnel interface.

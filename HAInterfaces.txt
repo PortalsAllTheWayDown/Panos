@@ -1,0 +1,2 @@
+HA Interfaces are required when setting up a cluster of two firewalls.
+Some chassis will have built-in dedicated HAinterfaces, in which case you may not need to create any HA interfaces yourself. If no onboard HA interfaces are available data plane interfaces can be selected to fulfill this role and are connected to the HA peer.
