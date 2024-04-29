@@ -2,7 +2,12 @@ The antivirus profile has three sections that depend on different licenses and d
 The actions under ACTION rely on threat prevention license and antivirus updates, WILDFIRE ACTION relies on the wildfire license and the wildfire updates that sre set to periodical updates, and wildfire inline ML action relies on wildfire set to real time.
 If any of these lencenses are missing from your system, the actions listed in their columns will not be applied. Application Exception allows you to change the action associated with a decorder for individual applications as needed.
 The actinos that can be set for both threat prevention and wildfire antivirus actions are as follows:
--allow-decryption-alert
--reset-client
--reset-server
--reset-both
+-allow: Allows matching signatures without logging.
+-drop: Drops matching signatures and writes an entry in the threat log
+-alert: Allows matching signatures to pass but writes an entry in the threat log
+-reset-client: Drops matching packets, sends a TCP RST to the client, and writes an entry in the threat log
+-reset-server: Drops matching packets, sendds a TCP RST to the server, and writes an entry in the threat log.
+-reset-both: Drops matching packets, sends a TCP RST to the client and server, and writes an entry in the threat log.
+
+Packet captures can be enabled for further analysis by the security team or as forensic evidence. They are attached to the threat log and are limited to packets containing matched signatures.
+
