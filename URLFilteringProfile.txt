@@ -1,0 +1,31 @@
+URL filtering leverages URL categories to determine what action to take for each category.
+There are two groups of categories: custom URL categories and the dynmaic categories provided by the URL filtering license.
+
+Custom URL categories:
+Custom URL categories do not require a license, so you can create these object and apply URL filtering even without access to the URL filtering license.
+Go to Objects | Custom Objects | URL category
+
+
+The string used in a custom URL category is divided up into substrings, or tokens, by separators. The ./?&=;+ characters are considered separators, so www.example.com has three tokens and two separators.
+
+Wildcards cannot be used as part of a token; for example, www.ex*.com is an illegal wildcard. Each string can be closed by a forward slash (/) or be left open by not adding an end slash. Not ending a string could have consequences if the string is very short or very common as it could match unintended longer addresses. For example, the *.com string could match www.communicationexample.org, so adding an ending slash would prevent this. Having multiple wildcards would require the use of a subdomain, so *.*.com would match anything.anything.com, but not anything.com.
+
+Actions for URL Filtering Profiles:
+-Allow: Allows a category without logging
+-Alert: allows a category and logs the access in the URL filtering log.
+-Block: Blocks the request injecting an HTTP 503 error and a redirect to a page hosted on the firewall explaining to the user that their access was declined and the action logged.
+-Continue: Inject an interactive web page informing the user that they are about to access a restricted website and provides a Continue button for them to acknowledge the risk associated with accessing the site.
+-Override: Injects an interactive web page that allows the user to continue if they are able ot provide a password to continue. This password can be set in Device | Setup | Content-ID | URL Admin Override.
+
+The order of severity is as follows:
+1.Block
+2.Override
+3.Continue
+4.Alert
+5.Allow
+
+The order of categories is as follows:
+1.Custom URL categories
+2.External dynamic URL lists
+3.Pre-defined categories
+

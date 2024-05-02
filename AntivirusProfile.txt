@@ -10,4 +10,3 @@ The actinos that can be set for both threat prevention and wildfire antivirus ac
 -reset-both: Drops matching packets, sends a TCP RST to the client and server, and writes an entry in the threat log.
 
 Packet captures can be enabled for further analysis by the security team or as forensic evidence. They are attached to the threat log and are limited to packets containing matched signatures.
-

@@ -1,0 +1,3 @@
+The WIldFire Analysis profile controls which files are uploaded to WildFire for analysis in a sandbox and which ones are sent to a private instance of WildFire.
+If no WildFire license is available only Portable Executables (PEs) are forwarded to WildFire.
+

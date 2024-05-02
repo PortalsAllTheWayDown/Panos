@@ -1,0 +1,25 @@
+The anti-spyware profile is etremely customizable and is built by a set of rules within the profile.
+
+These rules serve to change the default actions associated with each threat; so, if no rules are created at all, the profile will simply apply the default action for a specific signature when it is detected.
+Anti-Spyware supports the same actions as Antivirus(allow,drop,alert,reset-client,reset0server, and reset-both) as well as block-ip.
+    -Block-ip can tack by source or source destination pair and will block the offending IP for a duration of 1-3600 seconds. tracking by source will block all connections from the client for the duration of the block, while tracking by source-destination pair will only block connections from the client to the target destination and will not block the same client from connecting to other destinations.
+
+The packet capture options include none,single-packet, and extended-capture. While single-packet only captures the packet containing the payload matching a signature, extended-capture enables the capture of multiple packets to help analyze a threat. The number of packets captured by extended-capture can be configured via Device | Setup | Conent-ID.
+
+Enabling packet capture on all threats does require some CPU cycles. The impack will not be vry large but if the system is already very taxed some caution is advised.
+
+The Anti-Spyware profile also contains DNS signaturess, which are split into two databases for the subscription services.
+
+The Content DNS signatures are downloaded with the threat prevention dynamic updates. The DNS Security database uses dynamic cloud lookups.
+The elements in each database can be set to Alert,Allow,Block, or Sinkhole.
+Sinkhole uses a DNS poisoning technique that replaces the IP in the DNS reply packet so the client does get a valid DNS reply, but with an altered destination IP.
+You can keep using the Palo Alto Networks default sinkhole, sinkhole.paloaltonetworks.com or use your preferred IP.
+
+Sinkhole diagram:
+    -The client sends a DNS query to resolve a malicious domain to the internal DNS server.
+    -The internal DNS relays the DNS lookup to an internet DNS server.
+    -The firewall forges a poisoned reply to the DNS query and replies to the internal DNS server with a record pointing to the sinkhole IP.
+    -The DNS reply is forwarded to the client
+    -The client makes an outbound connection to the sinkhole IP, instead of the malicious server. The admin immediately knows which host is potentially infected and is trying to setup Command and Control connections.
+The default action for the Command and Control and Malware domains is to block the DNS reply, as sinkholing could trigger more evasive behavior. Therefore it is recommended to leave these categories in their default setting action.
+
