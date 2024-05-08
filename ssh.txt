@@ -1,0 +1,14 @@
+Secure Shell(SSH) is a protocol for secure remote login and other secure network services over an insecure network.
+
+SSH allows tunneling, which can be used to subvert firewalls and breach security policies.
+
+SSH tunneling, also known as SSH port forwarding, is how SSH tunnels network traffic through applicaiton ports from the localhost -- the computer physically present -- to a remote system or vice versa.
+
+If hackers gain access to a host running SSH on an organizations internal network they can use ssh on that host as a secure pipeline for exploiting private network services.
+
+
+1: Create a decryption policy, select its type as SSH proxy and commit.
+Configuring SSH proxy does not require certificates.
+They key used to decrypt SSH sessions is generated automatically on the firewall during boot up.
+The firewall resides between a client and a server.
+
